@@ -3,8 +3,9 @@
   --secondary-font: "Raleway", sans-serif;
   --main-text-color: #212121;
   --accent-color: #2196f3;
-  --secondary-text-color: #ffffff;
+  --secondary-color: #ffffff;
   --secondary-gray-color: #757575;
+  --icons-color: #afb1b8;
 }
 h1,
 h2,
@@ -73,9 +74,7 @@ body {
   justify-content: space-between;
 }
 .social-list-icon {
-  width: 20px;
-  height: 20px;
-  fill: #afb1b8;
+  fill: var(--icons-color);
 }
 .social-list-link {
   display: flex;
@@ -83,16 +82,17 @@ body {
   align-items: center;
   width: 44px;
   height: 44px;
-  background-color: #ffffff;
+  background-color: var(--secondary-color);
   border-radius: 50%;
 }
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: var(--accent-color);
+  outline: none;
 }
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
-  fill: var(--secondary-text-color);
+  fill: var(--secondary-color);
 }
 /* ========================== END COMPONENTS ============ */
 
@@ -133,7 +133,6 @@ body {
   margin-right: 50px;
 }
 .menu-link {
-  /* font-family: "Roboto", sans-serif; */
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -144,6 +143,7 @@ body {
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
+  outline: none;
 }
 
 .menu-link.current {
@@ -153,23 +153,20 @@ body {
   margin-right: 50px;
 }
 .envelope-icon {
-  width: 16px;
-  height: 12px;
-  fill: var(--secondary-gray-color);
+  fill: currentColor;
   margin-right: 10px;
 }
 .smartphone-icon {
-  width: 10px;
-  height: 16px;
-  fill: var(--secondary-gray-color);
+  fill: currentColor;
   margin-right: 10px;
 }
-.envelope-icon:hover,
-.envelope-icon:focus,
-.smartphone-icon:hover,
-.smartphone-icon:focus {
-  fill: var(--accent-color);
+.mail-link:hover .envelope-icon,
+.mail-link:focus .envelope-icon,
+.tel-link:hover .smartphone-icon,
+.tel-link:focus .smartphone-icon {
+  fill: currentColor;
 }
+
 .mail-link,
 .tel-link {
   font-weight: 500;
@@ -184,6 +181,7 @@ body {
 .tel-link:hover,
 .tel-link:focus {
   color: var(--accent-color);
+  outline: none;
 }
 .header {
   border-bottom: 1px solid #ececec;
@@ -202,6 +200,7 @@ body {
     ),
     url(../img/bg.jpg);
   background-size: cover;
+  /* max-width: 1600px; */
 }
 .hero-title {
   font-weight: 900;
@@ -210,7 +209,7 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--secondary-text-color);
+  color: var(--secondary-color);
   margin-bottom: 30px;
 }
 .hero-btn {
@@ -219,7 +218,7 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
-  color: var(--secondary-text-color);
+  color: var(--secondary-color);
   background-color: var(--accent-color);
   cursor: pointer;
   padding: 10px 32px;
@@ -229,6 +228,7 @@ body {
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: #188ce8;
+  outline: none;
 }
 /* =========================END HERO========================== */
 /* =========================BENEFITS========================== */
@@ -241,17 +241,16 @@ body {
   justify-content: space-between;
 }
 .benefits-list-icons {
-  width: 270px;
+  /* padding: 25px 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 120px;
-  padding: 25px 100px;
   background: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
 }
-.benefits-icon {
-  width: 70px;
-  height: 70px;
-}
+
 .benefits-list-item {
   max-width: 270px;
 }
@@ -313,7 +312,7 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
-  background: #ffffff;
+  background: var(--secondary-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -347,19 +346,28 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.client-icon {
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
   width: 170px;
   height: 92px;
-  padding: 16px 32px;
-  fill: #afb1b8;
-  border: 1px solid #afb1b8;
-  box-sizing: border-box;
-  border-radius: 4px;
 }
-.client-icon:hover {
-  fill: var(--accent-color);
+.client-icon {
+  fill: var(--icons-color);
+}
+.client-link:hover,
+.client-link:focus {
   border: 1px solid var(--accent-color);
+  outline: none;
 }
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
+  fill: var(--accent-color);
+}
+
 /* ============================END CLIENTS======================= */
 /* ============================= FOOTER ========================= */
 footer {
@@ -377,7 +385,7 @@ footer {
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  color: var(--secondary-text-color);
+  color: var(--secondary-color);
   display: inline-block;
   margin-bottom: 20px;
 }
@@ -389,7 +397,7 @@ footer {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  color: var(--secondary-text-color);
+  color: var(--secondary-color);
   margin-bottom: 9px;
 }
 .footer-list-item:not(:last-child) {
@@ -421,11 +429,11 @@ footer {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--secondary-color);
   margin-bottom: 20px;
 }
 .join-icon {
-  fill: #ffffff;
+  fill: var(--secondary-color);
 }
 .join-link {
   background-color: rgba(255, 255, 255, 0.1);
@@ -474,7 +482,7 @@ footer {
 .filtr-btn:hover,
 .filtr-btn:focus {
   background-color: var(--accent-color);
-  color: var(--secondary-text-color);
+  color: var(--secondary-color);
 }
 .portfolio-img-title {
   font-family: var(--main-font);
@@ -494,7 +502,16 @@ footer {
 }
 .portfolio-img-content {
   padding: 20px 24px;
-  background: #ffffff;
+  background: var(--secondary-color);
   border: 1px solid #eeeeee;
   border-top: none;
+}
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.filtr-section-item:hover,
+.filtr-section-item:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
